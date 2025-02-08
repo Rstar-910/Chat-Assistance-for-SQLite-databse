@@ -37,6 +37,19 @@ This Flask-based chatbot allows users to query an SQLite database containing emp
    ```bash
    pip install flask sqlite3 ollama
    ```
+  2.1 Download Ollama
+  ```bash
+  Windows
+  https://ollama.com/download/windows
+  Linux
+  curl -fsSL https://ollama.com/install.sh | sh
+  ```
+  2.2 Run 
+  ```bash
+  ollama pull llama3.2:1b
+  ollama run llama3.2:1b
+  ```
+
 3. Ensure you have an SQLite database (`company.db`) with the required tables:
    ```sql
    CREATE TABLE Employees (
