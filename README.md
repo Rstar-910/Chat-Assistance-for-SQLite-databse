@@ -1,5 +1,7 @@
 # Chat-Assistance-for-SQLite-databse
-
+<p align="center">
+  <img src="images/interface.png" alt="Chat Interface" width="500"/>
+</p>
 ## Overview
 This Flask-based chatbot allows users to query an SQLite database containing employee and department information. It can process predefined SQL queries for specific requests and use the Llama3.2:1B model via Ollama for more complex queries.
 
