@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import sqlite3
 import re
-import ollama
+# import ollama
 from huggingface_hub import InferenceClient
 import os
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -105,4 +105,5 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
