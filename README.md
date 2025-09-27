@@ -37,7 +37,7 @@ This Flask-based chatbot allows users to query an SQLite database containing emp
    ```
 2. Install dependencies:
    ```bash
-   pip install flask sqlite3 ollama
+   pip install -r requirements.txt
    ```
   2.1 Download Ollama
   ```bash
