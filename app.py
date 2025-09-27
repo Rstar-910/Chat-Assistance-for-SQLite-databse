@@ -5,7 +5,7 @@ import re
 from huggingface_hub import InferenceClient
 import os
 HF_TOKEN = os.getenv("HF_TOKEN")
-client = InferenceClient("tiiuae/falcon-7b-instruct", token=HF_TOKEN)
+client = InferenceClient("Salesforce/codegen-6B-mono", token=HF_TOKEN)
 
 app = Flask(__name__)
 
@@ -105,6 +105,7 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
