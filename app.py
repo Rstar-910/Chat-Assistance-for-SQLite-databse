@@ -2,6 +2,10 @@ from flask import Flask, render_template, request, jsonify
 import sqlite3
 import re
 import ollama
+from huggingface_hub import InferenceClient
+import os
+HF_TOKEN = os.getenv("HF_TOKEN")
+client = InferenceClient("HuggingFaceH4/zephyr-7b-beta", token=HF_TOKEN)
 
 app = Flask(__name__)
 
@@ -76,8 +80,11 @@ def process_with_ollama(user_input):
     Output ONLY the SQL query, nothing else.
     """
 
-    response = ollama.chat(model="llama3.2:1b", messages=[{"role": "user", "content": prompt}])
-    sql_query = response['message']['content'].strip()
+    # response = ollama.chat(model="llama3.2:1b", messages=[{"role": "user", "content": prompt}])
+    # sql_query = response['message']['content'].strip()
+    response = client.text_generation(prompt, max_new_tokens=200)
+    sql_query = response.strip()
+    
 
     # If the response is a valid SQL query, execute it
     if "SELECT" in sql_query.upper():
