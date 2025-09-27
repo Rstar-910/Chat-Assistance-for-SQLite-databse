@@ -63,12 +63,12 @@ def process_query(user_input):
 
     else:
         # Call Ollama if query doesn't match predefined patterns
-        return process_with_ollama(user_input)
+        return process_with_hf(user_input)
 
     return result if result else "No data found."
 
 # Function to use Ollama for unrecognized queries
-def process_with_ollama(user_input):
+def process_with_hf(user_input):
     prompt = f"""
     You are an AI assistant with access to an employee database. Generate an SQL query based on the user's request.
     
@@ -105,3 +105,4 @@ def chat():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
